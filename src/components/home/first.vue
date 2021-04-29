@@ -42,7 +42,8 @@ business successfully.
 </p>
 <input type="submit" value="lets talk" class="talk-input" data-aos="zoom-in"> <fa-icon icon="play-circle" />
 </div>
-<div class="sec col-lg-7 col-sm-12">
+<div class="clear"></div>
+<div class="sec col-lg-7 col-sm-12 lastm">
     <img src="@/assets/home/sec1.png" alt="">
     <img src="@/assets/home/sec2.png" alt="">
 </div>
@@ -126,6 +127,11 @@ export default {
     @content;
   }
 }
+@mixin maxtiny2 {
+  @media (max-width: 300px) {
+    @content;
+  }
+}
 @mixin minlarge {
   @media (min-width: 1200px) {
     @content;
@@ -142,6 +148,9 @@ export default {
     position: relative;
     overflow: hidden;
     
+}
+.clear{
+  clear: both;
 }
 .first p.tittle {
     width: 40%;
@@ -288,7 +297,7 @@ export default {
     background: #25aebd;
     position: absolute;
     top: 12px;
-    right: -38px;
+    right: -44px;
     @include maxmobile{
     top: 8px;
     }
@@ -302,7 +311,7 @@ export default {
     border-color:  transparent #25aebd transparent transparent;
     position: absolute;
     top: 5px;
-    right: -6px;
+    right: -10px;
     @include maxmobile{
     top: .5px;
     }
@@ -371,6 +380,7 @@ export default {
     }
     @include maxmobile{
    font-size: 11px;
+   margin-bottom: 100px;
     }
 }
 
@@ -624,4 +634,12 @@ padding: 0px;
 .first .carousel-inner {
      overflow: hidden;
     }
+.lastm{
+  @include maxtiny2{
+   margin-top: 38px!important;
+  }
+}
+
+
+
 </style>

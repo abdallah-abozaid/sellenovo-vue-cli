@@ -5,15 +5,15 @@
         <img src="@/assets/about/therd/about.png" alt="">
         <p>Duis et metus et massa tempus lacinia. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas ultricies, orci molestie blandit interdum. ipsum ante pellentesque nisl, eget mollis turpis quam nec eros. ultricies, orci molestie blandit interdum.</p>
         <div class="row">
-        <div class="items col-4">
+        <div class="items col-sm-4">
             <p>870</p>
             <p>Projects</p>
         </div>
-        <div class="items col-4">
+        <div class="items col-sm-4">
             <p>99%</p>
             <p>Satisfaction</p>
         </div>
-        <div class="items col-4">
+        <div class="items col-sm-4">
             <p>350</p>
             <p>Clients</p>
         </div>
@@ -113,6 +113,13 @@ margin-bottom: 0px;
     font-size: 25px;
 }
 }
+.about-therd .items{
+  @include maxsmall{
+    width: 52%;
+    margin: auto;
+    display: block;
+  }
+}
 .about-therd{
     position: relative;
     perspective: 200px;
@@ -131,14 +138,14 @@ transform: rotateY(-181deg) rotateZ(68deg) rotateX(48deg);
              width: 60px;
          }
          @include maxsmall{
-            transform: translateX(-80px) rotateY(-150deg) rotateZ(70deg) rotateX(58deg)
+            transform: translateX(-90px) rotateY(-80deg) rotateZ(70deg) rotateX(58deg)
          }
          @include maxmobile{
              
          }
          @include maxtiny{
       width: 40px;
-       transform:translateX(-90px) rotateY(-140deg) rotateZ(77deg) rotateX(67deg)
+       transform:translateX(-90px) rotateY(-80deg) rotateZ(77deg) rotateX(67deg)
 }
 }
 .about-therd .items:last-of-type::before{

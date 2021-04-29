@@ -3,10 +3,31 @@
     <div class="container">
      <swiper class="swiper"
     :slides-per-view="6"
-    :space-between="10"
+    :space-between="20"
+    loop=true
     navigation
     @swiper="onSwiper"
     @slideChange="onSlideChange"
+    grabCursor
+    :autoplay="{delay:2000}"
+    :breakpoints="{
+      200:{
+        slidesPerView:1
+      },
+      400:{
+        slidesPerView:2
+      },
+      640:{
+        slidesPerView:3
+      },
+      768:{
+        slidesPerView:4
+      },
+      1024:{
+        slidesPerView:6
+      }
+      
+    }"
   >
     <swiper-slide><img src="@/assets/home/second/aaaaa.png" alt=""></swiper-slide>
     <swiper-slide><img src="@/assets/home/second/a.png" alt=""></swiper-slide>
@@ -25,7 +46,7 @@
     </div>
 </template>
 <script>
-import SwiperCore, { Navigation, A11y } from 'swiper';
+import SwiperCore, { Navigation, A11y ,Autoplay} from 'swiper';
 
   // Import Swiper Vue.js components
   import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -35,7 +56,7 @@ import SwiperCore, { Navigation, A11y } from 'swiper';
   import 'swiper/components/navigation/navigation.scss';
 
   // install Swiper modules
-  SwiperCore.use([Navigation,  A11y]);
+  SwiperCore.use([Navigation,  A11y,Autoplay]);
 export default {
     components: {
       Swiper,
@@ -89,38 +110,20 @@ export default {
   margin: 100px 0px;
     overflow: hidden;
 }
-.swiper{
-  margin: auto;
-  padding: 0px 50px;
+.swiper-slide {
+ text-align: center;
+  img{
+  height: 100%;
 }
-.swiper-slide{
-  text-align: center;
-  width: 160px!important;
-  @include maxlarge{
-    width: 131px!important;
-  }
-  @include maxmediam{
-    width: 150px!important;
-    transform: scale(.7);
-  }
-  @include maxsmall{
-    width: 135px!important;
-  }
-  @include maxmobile{
-    width: 100px!important;
-    transform: scale(.5);
-  }
 }
- .swiper-button-prev ,.swiper-button-next {
-   top: 0px;
-    background: white;
-    height: 100%;
-    width: 50px;
+.swiper-button-next{
+    right: -3px;
+    left: auto;
 }
-.swiper-button-next, .swiper-container-rtl .swiper-button-prev {
-    right: -15px;
+.swiper-button-prev {
+    right: auto;
+    left: -3px;
 }
-.swiper-button-prev, .swiper-container-rtl .swiper-button-next {
-    left: -15px;
-}
+
+
 </style>
