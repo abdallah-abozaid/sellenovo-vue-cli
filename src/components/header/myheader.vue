@@ -2,7 +2,8 @@
     <div class="myheader ">
 
 
-<nav class="container navbar navbar-expand-lg navbar-light  ">
+<nav class=" navbar navbar-expand-lg navbar-light  ">
+  <div class="container">
   <a class="navbar-brand" href="#"><img src="@/assets/header/logo.png" alt=""></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -11,7 +12,7 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
       <li class="nav-item ">
-           <router-link class="nav-link" to="/">Home</router-link>
+           <router-link class="nav-link" to="/" axact>Home</router-link>
       </li>
       <li class="nav-item">
           <router-link class="nav-link" to="/about">About</router-link>
@@ -32,6 +33,7 @@
     <form class="form-inline my-2 my-lg-0">
       <p class="form-control mr-sm-2" >schedule a demo</p>
     </form>
+  </div>
   </div>
 </nav>
 
@@ -66,21 +68,25 @@ export default {
 
 
 //----------------------------------------------------------------------------------
-.nav-item{
-  border-bottom: 1px solid transparent ;
-  border-radius: 10px;
-  @include minmediam{
-       &:hover{
-    border-bottom: 1px solid #1D8793;
-    transition: all .5s linear;
-   
-  }
-      }
-
+body{
+  padding-top: 40px;
+}
+.myheader > nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 2px 2px 10px grey;
+  width: 100%;
+  z-index: 100;
+  background-color: white;
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: #32353C;
+    color: black!important;
+
+}
+.navbar-light .navbar-nav .nav-link {
+    transition: all .2s linear;
     margin: 0px 10px;
     font-weight: bold!important;
     font-size: 16px;
@@ -96,12 +102,6 @@ export default {
       padding-bottom: 0px;
       padding-top: 20px;
       border-radius: 10px;
-      &:hover{
-        width: 70%;
-        transition: all 1s linear;
-        border-color: #1D8793;
-        border-radius: 10px;
-      }
     }
 }
 .navbar-light .navbar-nav :last-child .nav-link {
@@ -114,6 +114,16 @@ export default {
         border-radius: 10px;
       }
     }
+}
+.router-link-exact-active  {
+border-bottom:4px solid #028291;
+background-color: #1d87936c;
+color: white!important;
+}
+.navbar-light .navbar-nav .nav-item:hover .nav-link {
+border-bottom:4px solid #028291;
+background-color: #1d87936c;
+color: white!important;
 }
 .form-inline .form-control {
     margin: 0px;

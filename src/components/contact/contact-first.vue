@@ -1,5 +1,5 @@
 <template>
-    <div class="contact-first">
+    <div class="contact-first ">
         <p class="product-tittle">CONTACT US</p>
         <img src="@/assets/home/four/back.png" alt="">
     </div>
@@ -46,7 +46,7 @@ export default {
 //----------------------------------------------------------------------------------
 .contact-first{
     background-color: #F7F8FA;
-    padding: 20px 0px;
+    padding: 40px 0px;
     position: relative;
 }
 .contact-first .product-tittle{

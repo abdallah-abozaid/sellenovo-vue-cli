@@ -147,6 +147,16 @@ export default {
     margin-bottom:60px;
     position: relative;
     overflow: hidden;
+     @include maxlarge(){
+      height: 550px;
+    }
+    @include maxmediam(){
+      height: 500px;
+    }
+   
+    @include maxmobile(){
+      height: 400px;
+    }
     
 }
 .clear{

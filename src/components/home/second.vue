@@ -12,7 +12,7 @@
     :autoplay="{delay:2000}"
     :breakpoints="{
       200:{
-        slidesPerView:1
+        slidesPerView:2
       },
       400:{
         slidesPerView:2
@@ -46,7 +46,7 @@
     </div>
 </template>
 <script>
-import SwiperCore, { Navigation, A11y ,Autoplay} from 'swiper';
+import SwiperCore, { Navigation, A11y , Autoplay} from 'swiper';
 
   // Import Swiper Vue.js components
   import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -114,6 +114,10 @@ export default {
  text-align: center;
   img{
   height: 100%;
+  width: 80px;
+  @include maxmobile(){
+    width: 70px;
+  }
 }
 }
 .swiper-button-next{
